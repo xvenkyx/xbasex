@@ -20,7 +20,7 @@ const ChatApp: React.FC<ChatAppProps> = () => {
   const [newMessage, setNewMessage] = useState("");
   const [isConnected, setIsConnected] = useState(false);
   const [currentRoom, setCurrentRoom] = useState("general");
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [authView, setAuthView] = useState<"login" | "signup">("login");
 
@@ -159,16 +159,16 @@ const ChatApp: React.FC<ChatAppProps> = () => {
   };
 
   // Get message history
-  const getMessageHistory = () => {
-    if (socketRef.current && socketRef.current.readyState === WebSocket.OPEN) {
-      socketRef.current.send(
-        JSON.stringify({
-          action: "getmessages",
-          roomId: currentRoom,
-        })
-      );
-    }
-  };
+  // const getMessageHistory = () => {
+  //   if (socketRef.current && socketRef.current.readyState === WebSocket.OPEN) {
+  //     socketRef.current.send(
+  //       JSON.stringify({
+  //         action: "getmessages",
+  //         roomId: currentRoom,
+  //       })
+  //     );
+  //   }
+  // };
 
   // Auto-scroll to bottom when new messages arrive
   useEffect(() => {
